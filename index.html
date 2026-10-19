@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Iris species classifier</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Which iris is it?</h1>
+    <p>Set a flower's measurements and a logistic regression model names the species.</p>
+  </header>
+  <main>
+    <figure>
+      <svg id="plot" viewBox="0 0 480 400" role="img"
+           aria-label="Scatter plot of petal length against petal width for 150 irises, colored by species. A ring marks your flower."></svg>
+      <figcaption class="muted">The plot shows petal size. The model also uses sepal size.</figcaption>
+    </figure>
+    <section>
+      <div class="result" aria-live="polite">
+        <p id="top" class="top">…</p>
+        <div id="bars"></div>
+      </div>
+      <div id="controls"></div>
+      <p id="note" class="muted"></p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

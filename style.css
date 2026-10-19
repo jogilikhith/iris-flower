@@ -1,0 +1,31 @@
+:root {
+  --bg: #f2f0f7; --ink: #1e1b2e; --muted: #5d5a70; --line: #d4d0e0; --accent: #6b46c1;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; padding: 2rem clamp(1rem, 4vw, 3rem);
+  background: var(--bg); color: var(--ink);
+  font: 400 1rem/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+header { max-width: 56ch; margin-bottom: 2rem; }
+h1 { margin: 0 0 .4rem; font: 600 clamp(2rem, 5vw, 3.2rem)/1.05 "Newsreader", Georgia, serif; }
+header p { margin: 0; color: var(--muted); }
+main { display: grid; grid-template-columns: minmax(280px, 6fr) 5fr; gap: clamp(1.5rem, 5vw, 4rem); align-items: start; }
+figure { margin: 0; }
+#plot { width: 100%; height: auto; }
+.grid { stroke: var(--line); stroke-width: 1; }
+.tick, .axis { fill: var(--muted); font-size: 12px; }
+.axis { font-size: 13px; }
+.muted { color: var(--muted); font-size: .9rem; }
+.result { padding-bottom: 1.25rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--line); }
+.top { margin: 0 0 1rem; font: 600 clamp(2.2rem, 6vw, 3.4rem)/1.05 "Newsreader", Georgia, serif; }
+.bar { margin-bottom: .7rem; }
+.bar-head { display: flex; justify-content: space-between; font-variant-numeric: tabular-nums; }
+.track { height: 10px; background: var(--line); border-radius: 5px; overflow: hidden; }
+.fill { height: 100%; width: 0; transition: width .2s ease; }
+.field { margin-bottom: 1.1rem; }
+.field-head { display: flex; justify-content: space-between; }
+.field-head output { font-weight: 600; font-variant-numeric: tabular-nums; }
+input[type=range] { width: 100%; accent-color: var(--accent); }
+@media (max-width: 760px) { main { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .fill { transition: none; } }
